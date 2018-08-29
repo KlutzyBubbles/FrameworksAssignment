@@ -8,7 +8,6 @@ use App\Itinerary;
 use App\Review;
 use App\Tour;
 use App\Trip;
-use App\User;
 use App\Vehicle;
 use Closure;
 use Illuminate\Support\Facades\View;

@@ -22,7 +22,7 @@
                 @if (Auth::check())
                     <li class="nav-item text-center"><a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-center" href="#!" id="viewDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-center" href="#" id="viewDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             View all...
                         </a>
                         <div class="dropdown-menu" aria-labelledby="viewDropdown">
@@ -85,7 +85,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-success text-light" href="#!" id="viewDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle btn btn-success text-light" href="#" id="viewDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Create...
                         </a>
                         <div class="dropdown-menu" aria-labelledby="viewDropdown">
