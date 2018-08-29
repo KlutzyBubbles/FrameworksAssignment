@@ -6,34 +6,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Navigation</title>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-        body {
-            margin-bottom: 60px;
-        }
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            line-height: 60px;
-            background-color: #f5f5f5;
-        }
-        body > .container {
-            padding: 80px 15px 0;
-        }
-
-        .footer > .container {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-    </style>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
