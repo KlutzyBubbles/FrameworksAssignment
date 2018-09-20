@@ -26,60 +26,76 @@
                             View all...
                         </a>
                         <div class="dropdown-menu" aria-labelledby="viewDropdown">
-                            <a class="dropdown-item" href="{{ url('/booking') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/booking') }}">
                                 Bookings
-                                <span class="badge badge-info">{{ $booking_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $booking_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $booking_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $booking_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/customer') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/customer') }}">
                                 Customers
-                                <span class="badge badge-info">{{ $customer_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $customer_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $customer_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $customer_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/itinerary') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/itinerary') }}">
                                 Itineraries
-                                <span class="badge badge-info">{{ $itinerary_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $itinerary_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $itinerary_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $itinerary_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/review') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/review') }}">
                                 Reviews
-                                <span class="badge badge-info">{{ $review_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $review_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $review_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $review_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/tour') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/tour') }}">
                                 Tours
-                                <span class="badge badge-info">{{ $tour_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $tour_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $tour_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $tour_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/trip') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/trip') }}">
                                 Trips
-                                <span class="badge badge-info">{{ $trip_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $trip_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $trip_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $trip_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
-                            <a class="dropdown-item" href="{{ url('/vehicle') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/vehicle') }}">
                                 Vehicles
-                                <span class="badge badge-info">{{ $vehicle_count }}</span>
-                                @if (Auth::user()->isAdmin())
-                                    <span class="badge badge-danger">{{ $vehicle_trashed_count }}</span>
-                                @endif
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $vehicle_count }}</span>
+                                    @if (Auth::user()->isAdmin())
+                                        <span class="badge badge-danger">{{ $vehicle_trashed_count }}</span>
+                                    @endif
+                                </span>
                             </a>
                             @if (Auth::user()->isAdmin())
-                            <a class="dropdown-item" href="{{ url('/staff') }}">
+                            <a class="dropdown-item d-flex justify-content-between" href="{{ url('/staff') }}">
                                 Staff
-                                <span class="badge badge-info">{{ $staff_count }}</span>
-                                <span class="badge badge-danger">{{ $staff_trashed_count }}</span>
+                                <span class="ml-2 float-right">
+                                    <span class="badge badge-info">{{ $staff_count }}</span>
+                                    <span class="badge badge-danger">{{ $staff_trashed_count }}</span>
+                                </span>
                             </a>
                             @endif
                         </div>

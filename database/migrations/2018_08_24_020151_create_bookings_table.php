@@ -20,8 +20,8 @@ class CreateBookingsTable extends Migration
             $table->integer('number_of_bookings');
             $table->date('booked_for')->nullable();
             $table->decimal('deposit_amount', 6)->nullable();
-            $table->foreign('trip_id')->references('id')->on('trips');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('trip_id')->references('id')->on('trips')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

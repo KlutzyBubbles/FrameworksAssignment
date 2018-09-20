@@ -35961,6 +35961,12 @@ $(document).ready(function () {
             document.location = url + "?show_trashed=" + $('#show-trashed').is(':checked');
         }
     });
+    $('.row-link').click(function () {
+        document.location = $(this).data('href');
+    });
+    $('.select-change').on('change', function () {
+        $($(this).data('ref')).val($(this).val());
+    });
 });
 
 /***/ }),

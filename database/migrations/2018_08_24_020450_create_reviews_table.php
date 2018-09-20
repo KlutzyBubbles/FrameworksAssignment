@@ -21,8 +21,8 @@ class CreateReviewsTable extends Migration
             $table->string('feedback', 256)->nullable();
             $table->string('likes', 256)->nullable();
             $table->string('dislikes', 256)->nullable();
-            $table->foreign('trip_id')->references('id')->on('trips');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('trip_id')->references('id')->on('trips')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

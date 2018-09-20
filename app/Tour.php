@@ -20,4 +20,12 @@ class Tour extends Model
     public function trips() {
         return $this->hasMany('App\Trip');
     }
+
+    public static function boot() {
+        parent::boot();
+        static::deleting(function($m) {
+            $m->itineraries()->delete();
+            $m->trips()->delete();
+        });
+    }
 }

@@ -22,8 +22,8 @@ class CreateTripsTable extends Migration
             $table->decimal('standard_amount', 6)->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('tour_id')->references('id')->on('tours');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
         });
     }
 

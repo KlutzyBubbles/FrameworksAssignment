@@ -21,7 +21,7 @@ class CreateItinerariesTable extends Migration
             $table->string('activities', 150)->nullable();
             $table->string('meals', 150)->nullable();
             $table->unique(['tour_id', 'day_no']);
-            $table->foreign('tour_id')->references('id')->on('tours');
+            $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

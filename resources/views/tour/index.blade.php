@@ -38,13 +38,13 @@
                         <tr>
                             <!-- ID -->
                                 @include('include.sort', ['column' => 'id', 'display' => 'ID'])
-                            <!-- ID -->
+                            <!-- NAME -->
                                 @include('include.sort', ['column' => 'name', 'display' => 'Name'])
-                            <!-- ID -->
+                            <!-- DESCRIPTION -->
                                 @include('include.sort', ['column' => 'description', 'display' => 'Description'])
-                            <!-- ID -->
+                            <!-- DURATION -->
                                 @include('include.sort', ['column' => 'duration', 'display' => 'Duration'])
-                            <!-- ID -->
+                            <!-- ROUTE MAP -->
                                 @include('include.sort', ['column' => 'route_map', 'display' => 'Route Map'])
                             <th>Actions</th>
                         </tr>
@@ -61,7 +61,8 @@
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Actions">
                                             <a href="{{ url('/tour/' . $row->id . '/edit') }}" class="btn btn-light" data-toggle="tooltip" data-placement="left" title="Restore"><i class="material-icons">restore</i></a>
-                                            <a href="{{ url('/tour/' . $row->id . '/destroy') }}" class="btn btn-dark" data-toggle="tooltip" data-placement="right" title="Permanently Delete"><i class="material-icons">delete</i></a>
+                                            <a href="{{ url('/tour/' . $row->id . '/destroy') }}" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Permanently Delete"><i class="material-icons">delete</i></a>
+                                            <a href="{{ url('/tour/' . $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="View"><i class="material-icons">info</i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -75,7 +76,8 @@
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Actions">
                                             <a href="{{ url('/tour/' . $row->id . '/edit') }}" class="btn btn-warning btn-block" data-toggle="tooltip" data-placement="left" title="Edit"><i class="material-icons">edit</i></a>
-                                            <a href="{{ url('/tour/' . $row->id . '/destroy') }}" class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Delete"><i class="material-icons">delete</i></a>
+                                            <a href="{{ url('/tour/' . $row->id . '/destroy') }}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="material-icons">delete</i></a>
+                                            <a href="{{ url('/tour/' . $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="View"><i class="material-icons">info</i></a>
                                         </div>
                                     </td>
                                 </tr>

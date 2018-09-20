@@ -6,6 +6,7 @@ use App\Tour;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 
 class TourController extends PageController
@@ -24,6 +25,9 @@ class TourController extends PageController
     ];
 
     public function index(Request $request) {
+        if (!Schema::hasColumn('tours', $request->session()->get('sort_by', 'id'))) {
+            $request->session()->put('sort_by', 'id');
+        }
         if (Auth::user()->isAdmin()) {
             if ($request->session()->get('show_trashed') === true) {
                 if ($this->filter === true) {
@@ -65,11 +69,19 @@ class TourController extends PageController
 
     public function show($id) {
         try {
-            $tour = Tour::findOrFail($id);
+            if (!Auth::user()->isAdmin()) {
+                $tour = Tour::findOrFail($id);
+            } else {
+                $tour = Tour::withTrashed()->findOrFail($id);
+            }
+            $itineraries = $tour->itineraries()->withTrashed()->get();
+            $trips = $tour->trips()->withTrashed()->get();
         } catch (ModelNotFoundException $e) {
             return view('errors.404');
         }
-        return view('tour.view', ['data' => $tour]);
+        return view('tour.view', ['data' => $tour,
+                                        'itineraries' => $itineraries,
+                                        'trips' => $trips]);
     }
 
     public function create() {
@@ -81,7 +93,8 @@ class TourController extends PageController
             $tour = Tour::withTrashed()->findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return view('errors.404');
-        }if ($tour->trashed()) {
+        }
+        if ($tour->trashed()) {
             if (Auth::user()->isAdmin()) {
                 $tour->forceDelete();
                 Session::flash('success', 'Tour permanently deleted');
@@ -89,10 +102,6 @@ class TourController extends PageController
             } else {
                 return view('errors.404');
             }
-        }
-        if ($tour->trashed()) {
-            Session::flash('warning', 'That tour has already been deleted');
-            return redirect('tour');
         }
         $tour->delete();
         Session::flash('success', 'Tour deleted');

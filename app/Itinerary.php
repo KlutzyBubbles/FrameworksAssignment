@@ -11,6 +11,8 @@ class Itinerary extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = ['tour_id', 'day_no', 'hotel_booking', 'activities', 'meals'];
+
     public function tour() {
         return $this->belongsTo('App\Tour');
     }

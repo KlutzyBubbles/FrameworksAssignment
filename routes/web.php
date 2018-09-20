@@ -28,6 +28,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/vehicle/{id}/destroy', 'VehicleController@destroy');
     Route::get('/staff/{id}/destroy', 'StaffController@destroy');
 
+    Route::get('/customer/enable/{id}', 'CustomerController@enable')->name('customer.enable');
+    Route::get('/customer/disable/{id}', 'CustomerController@disable')->name('customer.disable');
+
     Route::resource('booking', 'BookingController');
     Route::resource('customer', 'CustomerController');
     Route::resource('itinerary', 'ItineraryController');

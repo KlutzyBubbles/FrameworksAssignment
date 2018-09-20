@@ -10498,3 +10498,7 @@ body > .container {
   padding-left: 15px;
 }
 
+.row-link:hover {
+  cursor: pointer;
+}
+
