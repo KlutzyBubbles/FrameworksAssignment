@@ -1,5 +1,8 @@
 <label for="page-size">Page Size</label>
 <select id="page-size" class="size-selector custom-select">
+    @if ($size != 5 && $size != 10 && $size != 25 && $size != 50)
+        <option value="{{ $size }}" selected="selected">{{ $size }}</option>
+    @endif
     @if ($size == 5)
         <option value="5" selected="selected">5</option>
     @else

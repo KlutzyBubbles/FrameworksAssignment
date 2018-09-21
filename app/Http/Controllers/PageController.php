@@ -14,7 +14,7 @@ class PageController extends Controller
         if ($request->has('size')) {
             $temp = $request->get('size');
             if (!is_nan($temp)) {
-                $request->session()->put('size', $temp);
+                $request->session()->put('size', $temp > 500 ? 500 : $temp < 1 ? 1 : $temp);
             } else if (!$request->session()->has('size')) {
                 $request->session()->put('size', 10);
             }
