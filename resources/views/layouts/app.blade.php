@@ -106,14 +106,16 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="viewDropdown">
                             <a class="dropdown-item" href="{{ url('/booking/create') }}">Booking</a>
-                            <a class="dropdown-item" href="{{ url('/customer/create') }}">Customer</a>
+                            @if (Auth::user()->isAdmin())
+                                <a class="dropdown-item" href="{{ url('/customer/create') }}">Customer</a>
+                            @endif
                             <a class="dropdown-item" href="{{ url('/itinerary/create') }}">Itinerary</a>
                             <a class="dropdown-item" href="{{ url('/review/create') }}">Review</a>
                             <a class="dropdown-item" href="{{ url('/tour/create') }}">Tour</a>
                             <a class="dropdown-item" href="{{ url('/trip/create') }}">Trip</a>
                             <a class="dropdown-item" href="{{ url('/vehicle/create') }}">Vehicle</a>
                             @if (Auth::user()->isAdmin())
-                            <a class="dropdown-item" href="{{ url('/staff/create') }}">Staff</a>
+                                <a class="dropdown-item" href="{{ url('/staff/create') }}">Staff</a>
                             @endif
                         </div>
                     </li>

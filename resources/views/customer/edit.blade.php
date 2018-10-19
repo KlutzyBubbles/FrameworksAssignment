@@ -117,7 +117,7 @@
                     <label for="phone" class="col-md-4 col-lg-3 control-label lead">Phone</label>
 
                     <div class="col-12 col-md-8 col-lg-9">
-                        <input id="phone" type="text" placeholder="1234567890" minlength="8" maxlength="10" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $data->phone) }}" required autofocus>
+                        <input id="phone" type="text" placeholder="1234567890" minlength="8" maxlength="10" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $data->phone) }}" autofocus>
 
                         @if ($errors->has('phone'))
                             <div class="invalid-feedback">

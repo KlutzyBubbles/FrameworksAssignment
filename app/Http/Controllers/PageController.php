@@ -13,7 +13,7 @@ class PageController extends Controller
         $this->middleware('auth.message');
         if ($request->has('size')) {
             $temp = $request->get('size');
-            if (!is_nan($temp)) {
+            if (is_numeric($temp)) {
                 $request->session()->put('size', $temp > 500 ? 500 : $temp < 1 ? 1 : $temp);
             } else if (!$request->session()->has('size')) {
                 $request->session()->put('size', 10);
@@ -37,7 +37,7 @@ class PageController extends Controller
                 $request->session()->forget('value');
             }
         }
-        if (!$request->session()->has('query') || !$request->session()->has('value'))
+        if (!$request->session()->has('column') || !$request->session()->has('value'))
             $this->filter = false;
         if ($request->has('sort_by')) {
             $temp = $request->get('sort_by');
